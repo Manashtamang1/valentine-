@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine, Rezu? 💌</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffebee, #fce4ec, #f8bbd0);
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        #proposal, #loveletter {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px 20px 100px;
+            transition: opacity 1.2s ease;
+        }
+        #loveletter {
+            opacity: 0;
+            pointer-events: none;
+            overflow-y: auto;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: #c2185b;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+            margin: 30px 0 20px;
+            text-align: center;
+        }
+        .heart-frame {
+            width: 380px;
+            height: 380px;
+            background: url('https://files.catbox.moe/wjnomr.jpg') no-repeat center/cover;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+            margin: 40px 0 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            animation: float 7s ease-in-out infinite; /* Gentle up-down only */
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .buttons {
+            display: flex;
+            gap: 60px;
+            z-index: 10;
+            margin-top: 30px;
+        }
+        button {
+            padding: 22px 80px;
+            font-size: 2rem;
+            border: none;
+            border-radius: 80px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-weight: bold;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        #yesBtn { background: linear-gradient(45deg, #e91e63, #f06292); color: white; }
+        #noBtn { background: #e0e0e0; color: #424242; position: relative; }
+        .letter-container {
+            max-width: 1000px;
+            background: rgba(255,255,255,0.98);
+            padding: 60px 50px;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            text-align: center;
+            line-height: 2.2;
+            font-size: 1.5rem;
+            color: #3e2723;
+            margin-bottom: 40px;
+        }
+        .letter-container h1 { font-size: 5.5rem; margin-bottom: 50px; color: #ad1457; }
+        .letter-container p { margin: 30px 0; font-style: italic; color: #4e342e; }
+        .letter-container .highlight {
+            font-weight: bold;
+            color: #c2185b;
+            font-size: 1.9rem;
+            display: block;
+            margin: 45px 0;
+        }
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 70px;
+        }
+        .photos img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
+        .photos img:hover { transform: scale(1.12); }
+        .particle {
+            position: absolute;
+            animation: fall linear infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+        .heart { font-size: 2.4rem; }
+        .thunder { font-size: 2.8rem; animation: fall 4s linear infinite, flash 0.5s infinite alternate; }
+        @keyframes fall { 0% { transform: translateY(-150%) rotate(0deg); opacity: 0.9; } 100% { transform: translateY(150vh) rotate(720deg); opacity: 0; } }
+        @keyframes flash { 0% { opacity: 0.9; text-shadow: 0 0 15px #ffd700; } 100% { opacity: 1; text-shadow: 0 0 25px #ffff00; } }
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            .heart-frame { width: 280px; height: 280px; }
+            button { padding: 18px 60px; font-size: 1.6rem; }
+            .letter-container { padding: 50px 30px; font-size: 1.3rem; }
+            .photos img { width: 140px; height: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Proposal Section -->
+    <div id="proposal">
+        <div class="heart-frame"></div>
+        <h1>Will you be my valentine miss rezu 🥺🫂</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes 🥰</button>
+            <button id="noBtn">No 😔</button>
+        </div>
+    </div>
+
+    <!-- Love Letter Section (scrollable) -->
+    <div id="loveletter">
+        <div class="letter-container">
+            <div class="heart-frame" style="width:450px; height:450px; margin-bottom:60px;"></div>
+            
+            <h1>My Dearest Rezu ❤️</h1>
+            
+            <p>Before I knew you, my life was black and white — a quiet, muted existence where days felt the same, without that special glow that makes everything feel meaningful. Happiness was there, but it was soft, distant, like a memory from someone else's life.</p>
+            
+            <p>Then you came into my thoughts, and suddenly everything bloomed with color. Your words, your smile in photos, your presence even from afar — they brought bright hues to every moment. Life feels richer, warmer, happier because of the light you bring, even from a distance.</p>
+            
+            <span class="highlight">You turned my world colorful and happier in ways I never expected.</span>
+            
+            <p>Every message from you feels like a burst of sunshine. Your kindness shines through every word, your thoughts inspire me, and the way you express yourself makes my heart flutter in ways I never knew possible. You make me dream bigger, feel deeper, and smile more than I ever did before.</p>
+            
+            <p>I find myself thinking of you constantly — the little things you share, the way you see the world, the beauty in your soul that comes through even in simple moments. You've become the highlight of my days, the reason I look forward to tomorrow, the quiet joy that lingers even when things are hard.</p>
+            
+            <span class="highlight">My heart sees only you in every shade of color now.</span>
+            
+            <p>You've shown me that love can start with a feeling, with admiration from a distance, with the hope of what could be. I cherish every second I get to know you more, every thought that connects us. You make the ordinary feel special, the distant feel close, and the future feel bright.</p>
+            
+            <p>I promise to keep holding you in my heart, to send you all the care and warmth I can, to dream of the day when this color becomes even closer and more real. Until then, know that you are the light in my every moment.</p>
+            
+            <p>Thank you for making my world so much more beautiful and happy. You are everything to me — my dearest, my forever thought.</p>
+            
+                        <p>I Love You 🥺🌹.</p>
+            
+            <p class="signature">With all my love and endless dreams of you,<br>Manas ♡</p>
+
+            <!-- Small photos gallery -->
+            <div class="photos">
+                <img src="https://files.catbox.moe/k8861y.jpg" alt="Rezu photo 1">
+                <img src="https://files.catbox.moe/epez03.jpg" alt="Rezu photo 2">
+                <img src="https://files.catbox.moe/ff3p4q.jpg" alt="Rezu photo 3">
+                <img src="https://files.catbox.moe/ulzb30.jpg" alt="Rezu photo 4">
+                <img src="https://files.catbox.moe/1sf8y9.jpg" alt="Rezu photo 5">
+                <img src="https://files.catbox.moe/grisx0.jpg" alt="Rezu photo 6">
+                <img src="https://files.catbox.moe/ky3cv6.jpg" alt="Rezu photo 7">
+                <img src="https://files.catbox.moe/2kecy0.jpg" alt="Rezu photo 8">
+                <img src="https://files.catbox.moe/zevn8u.jpg" alt="Rezu photo 9">
+                <img src="https://files.catbox.moe/25bwz6.jpg" alt="Rezu photo 10">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden MP3 Players -->
+    <audio id="song1" preload="auto">
+        <source src="https://files.catbox.moe/67wg6g.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="song2" preload="auto">
+        <source src="https://files.catbox.moe/vioodp.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // No button dodges
+        const noBtn = document.getElementById('noBtn');
+        noBtn.addEventListener('mouseover', dodge);
+        noBtn.addEventListener('click', dodge);
+
+        function dodge() {
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = Math.random() * (window.innerWidth - 300) + 'px';
+            noBtn.style.top = Math.random() * (window.innerHeight - 250) + 'px';
+        }
+
+        // Yes → show letter + play MP3s in endless sequence (1 → 2 → 1 → 2 ...)
+        document.getElementById('yesBtn').addEventListener('click', () => {
+            document.getElementById('proposal').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('proposal').style.display = 'none';
+                document.getElementById('loveletter').style.opacity = '1';
+                document.getElementById('loveletter').style.pointerEvents = 'auto';
+
+                const song1 = document.getElementById('song1');
+                const song2 = document.getElementById('song2');
+
+                // Start with song1
+                song1.currentTime = 0;
+                song1.volume = 0.5;
+                song1.play().catch(err => console.error("Song1 play error:", err));
+
+                // When song1 ends → play song2
+                song1.addEventListener('ended', playSong2);
+
+                function playSong2() {
+                    song2.currentTime = 0;
+                    song2.volume = 0.5;
+                    song2.play().catch(err => console.error("Song2 play error:", err));
+                }
+
+                // When song2 ends → play song1 again (loop forever)
+                song2.addEventListener('ended', () => {
+                    song1.currentTime = 0;
+                    song1.play().catch(err => console.error("Song1 loop error:", err));
+                });
+
+            }, 1200);
+        });
+
+        // Particles: Hearts & Thunder
+        function createParticle(type) {
+            const p = document.createElement('div');
+            p.className = 'particle ' + type;
+            p.innerHTML = type === 'heart' ? '❤️' : '⚡';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            p.style.opacity = Math.random() * 0.6 + 0.4;
+            document.body.appendChild(p);
+            setTimeout(() => p.remove(), 15000);
+        }
+        setInterval(() => createParticle('heart'), 500);
+        setInterval(() => createParticle('thunder'), 700);
+    </script>
+</body>
+</html>
